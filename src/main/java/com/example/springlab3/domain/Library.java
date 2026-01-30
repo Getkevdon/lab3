@@ -17,7 +17,7 @@ public class Library {
     private String location;
 
 
-    @OneToMany(mappedBy = "library", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "library", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Book> books = new ArrayList<>();
 

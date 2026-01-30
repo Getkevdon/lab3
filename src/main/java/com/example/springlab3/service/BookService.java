@@ -2,16 +2,21 @@ package com.example.springlab3.service;
 
 import com.example.springlab3.domain.Book;
 import com.example.springlab3.repository.BookRepository;
+import com.example.springlab3.repository.LibraryRepository;
 
 import java.util.List;
 
 public class BookService {
     private final BookRepository repo;
-    public BookService(BookRepository repo){
+    private final LibraryRepository libRepo;
+
+    public BookService(BookRepository repo, LibraryRepository libRepo) {
         this.repo = repo;
+        this.libRepo = libRepo;
+
     }
 
-    public List<Book> getAllBooks(){
+    public List<java.awt.print.Book> getAllBooks(BookRepository ){
         return repo.findAll();
     }
 
