@@ -3,6 +3,8 @@ package com.example.springlab3.domain;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
+import java.util.Optional;
+
 @Entity
 public class Book {
     @Id
