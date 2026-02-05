@@ -4,15 +4,10 @@ import com.example.springlab3.domain.Book;
 import com.example.springlab3.domain.Library;
 import com.example.springlab3.repository.BookRepository;
 import com.example.springlab3.repository.LibraryRepository;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-
-
 import java.util.List;
-import java.util.Optional;
-
 @Service
 public class BookService {
     private final BookRepository bookrepo;
