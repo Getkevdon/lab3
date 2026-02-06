@@ -24,6 +24,9 @@ public class BookService {
     }
 
     public List<Book> getBookByLibrary(Long libraryId ){
+        if (!libRepo.existsById(libraryId)){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Library not found with id " + libraryId);
+        }
         return bookrepo.findByLibraryId(libraryId);
     }
 
@@ -38,6 +41,9 @@ public class BookService {
     }
 
     public void deleteBook(Long bookId) {
+        if (!bookrepo.existsById(bookId)){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Book not found with id " + bookId);
+        }
         bookrepo.deleteById(bookId);
     }
 
